@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA3A4FEE-6317-4174-8C6A-B847F1E4467A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XmlPrime.Tasks</RootNamespace>
+    <AssemblyName>XmlPrime.Tasks</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Debug\XmlPrime.Tasks.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\bin\Release\XmlPrime.Tasks.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.Build.Utilities.v3.5" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="XmlPrime"></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\XmlPrime\Contracts\Assert.cs">
+      <Link>Contracts\Assert.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\AssertionConditionAttribute.cs">
+      <Link>Contracts\AssertionConditionAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\AssertionConditionType.cs">
+      <Link>Contracts\AssertionConditionType.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\AssertionMethodAttribute.cs">
+      <Link>Contracts\AssertionMethodAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\AssertionPredicate.cs">
+      <Link>Contracts\AssertionPredicate.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\CanBeNullAttribute.cs">
+      <Link>Contracts\CanBeNullAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\Ensure.cs">
+      <Link>Contracts\Ensure.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\InvokerParameterNameAttribute.cs">
+      <Link>Contracts\InvokerParameterNameAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\NotNullAttribute.cs">
+      <Link>Contracts\NotNullAttribute.cs</Link>
+    </Compile>
+    <Compile Include="..\XmlPrime\Contracts\TerminatesProgramAttribute.cs">
+      <Link>Contracts\TerminatesProgramAttribute.cs</Link>
+    </Compile>
+    <Compile Include="Include.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResultDocumentHandler.cs" />
+    <Compile Include="Serialize.cs" />
+    <Compile Include="Transform.cs" />
+    <Compile Include="Query.cs" />
+    <Compile Include="XmlPrimeSerializationTask.cs" />
+    <Compile Include="XmlPrimeTask.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XmlPrime.Tasks.tasks">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="XmlPrime.Tasks.Namespace.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <XmlPrimeTasksLib>XmlPrime.Tasks.dll</XmlPrimeTasksLib>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(XmlPrimeTasksLib)" TaskName="XmlPrime.Tasks.Transform" />
+  <UsingTask AssemblyFile="$(XmlPrimeTasksLib)" TaskName="XmlPrime.Tasks.Query" />
+  <UsingTask AssemblyFile="$(XmlPrimeTasksLib)" TaskName="XmlPrime.Tasks.Serialize" />
+  <UsingTask AssemblyFile="$(XmlPrimeTasksLib)" TaskName="XmlPrime.Tasks.Include" />
+
+</Project>
+
